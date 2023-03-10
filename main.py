@@ -1,7 +1,7 @@
 import cv2
 import streamlit as st
 import time
-import datetime
+from datetime import datetime
 
 st.title('Motion Detector')
 start = st.button('Start Camera')
@@ -12,7 +12,7 @@ if start:
     camera = cv2.VideoCapture(0)
 
     while True:
-        now = datetime.datetime.now()
+        now = datetime.now()
         check, frame = camera.read()
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
